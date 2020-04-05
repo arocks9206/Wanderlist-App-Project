@@ -1,5 +1,9 @@
-DROP TABLE users;
+DROP TABLE beentheres;
+DROP TABLE bucketlists;
 DROP TABLE destinations;
+DROP TABLE users;
+
+
 
 CREATE TABLE users
 (
@@ -14,4 +18,18 @@ CREATE TABLE destinations
   continent VARCHAR(255),
   country VARCHAR(255),
   city VARCHAR(255)
+);
+
+CREATE TABLE bucketlists
+(
+  id SERIAL primary key,
+  destination_id INT references destinations(id) ON DELETE CASCADE,
+  date_added DATE
+);
+
+CREATE TABLE beentheres
+(
+  id SERIAL primary key,
+  destination_id INT references destinations(id) ON DELETE CASCADE,
+  date_completed DATE
 );

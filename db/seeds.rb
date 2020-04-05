@@ -109,6 +109,12 @@ destination14 = Destination.new({
   })
 destination14.save()
 
+bucketlist1 = Bucketlist.new({
+  "destination_id" => destination8.id,
+  "date_added" => "2020-04-05"
+  })
+bucketlist1.save()
+
 
 binding.pry
 nil
