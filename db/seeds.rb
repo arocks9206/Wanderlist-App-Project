@@ -3,6 +3,9 @@ require_relative('../models/destinations')
 
 require("pry-byebug")
 
+# User.delete_all()
+# Destination.delete_all()
+
 user = User.new({
   "full_name" => "Alex Rocks",
   "current_location" => "Glasgow"
@@ -22,6 +25,9 @@ destination2 = Destination.new({
   "city" => "New York"
   })
 destination2.save()
+
+destination2.city = "San Francisco"
+destination2.update()
 
 destination3 = Destination.new({
   "continent" => "North America",
@@ -58,32 +64,50 @@ destination7 = Destination.new({
   })
 destination7.save()
 
+destination8 = Destination.new({
+  "continent" => "Africa",
+  "country" => "Morroco",
+  "city" => "Marrakesh"
+  })
+destination8.save()
 
+destination9 = Destination.new({
+  "continent" => "Africa",
+  "country" => "South Africa",
+  "city" => "Cape Town"
+  })
+destination9.save()
 
+destination10 = Destination.new({
+  "continent" => "Asia",
+  "country" => "India",
+  "city" => "Kochi"
+  })
+destination10.save()
 
+destination11 = Destination.new({
+  "continent" => "Asia",
+  "country" => "Japan",
+  "city" => "Kyoto"
+  })
+destination11.save()
 
+destination12 = Destination.new({
+  "continent" => "Australia",
+  "city" => "Melbourne"
+  })
+destination12.save()
 
+destination13 = Destination.new({
+  "continent" => "Australia",
+  "city" => "Sydney"
+  })
+destination13.save()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+destination14 = Destination.new({
+  "continent" => "Antartica",
+  })
+destination14.save()
 
 
 binding.pry

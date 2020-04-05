@@ -28,4 +28,35 @@ class User
     @id = results.first()['id'].to_i
  end
 
+ def update()
+   sql = "UPDATE destinations SET
+       city
+     =
+     $1
+     WHERE id = $2"
+     values = [@current_location, @id]
+     SqlRunner.run(sql, values)
+ end
+
+ def self.all()
+  sql = "SELECT * FROM users"
+  results = SqlRunner.run( sql )
+  return results.map { |user| User.new(user) }
+ end
+
+ def self.find(id)
+    sql = "SELECT * FROM users
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return User.new(results.first)
+  end
+
+ def delete()
+   sql = "DELETE FROM users WHERE id = $1"
+   SqlRunner.run(sql)
+ end
+
+
+
 end
