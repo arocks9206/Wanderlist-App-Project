@@ -54,8 +54,8 @@ class Destination
     return Destination.new(results.first)
   end
 
- def delete()
-   sql = "DELETE FROM destinations WHERE id =$1"
+ def delete_all()
+   sql = "DELETE FROM destinations"
    SqlRunner.run(sql)
  end
 

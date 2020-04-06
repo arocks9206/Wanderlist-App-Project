@@ -52,8 +52,8 @@ class User
     return User.new(results.first)
   end
 
- def delete()
-   sql = "DELETE FROM users WHERE id = $1"
+ def delete_all()
+   sql = "DELETE FROM users"
    SqlRunner.run(sql)
  end
 

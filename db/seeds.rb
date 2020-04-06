@@ -1,15 +1,16 @@
 require_relative('../models/users')
 require_relative('../models/destinations')
+require_relative('../models/bucket_lists')
+require_relative('../models/been_there')
 
 require("pry-byebug")
 
 # User.delete_all()
 # Destination.delete_all()
+# Bucketlist.delete_all()
+# Beenthere.delete_all()
 
-user = User.new({
-  "full_name" => "Alex Rocks",
-  "current_location" => "Glasgow"
-  })
+user = User.new({"full_name" => "Alex Rocks", "current_location" => "Glasgow"})
 user.save()
 
 destination1 = Destination.new({
@@ -92,28 +93,35 @@ destination11 = Destination.new({
   })
 destination11.save()
 
-destination12 = Destination.new({
-  "continent" => "Australia",
-  "city" => "Melbourne"
-  })
+destination12 = Destination.new({"continent" => "Australia", "city" => "Melbourne"})
 destination12.save()
 
-destination13 = Destination.new({
-  "continent" => "Australia",
-  "city" => "Sydney"
-  })
+destination13 = Destination.new({"continent" => "Australia", "city" => "Sydney"})
 destination13.save()
 
-destination14 = Destination.new({
-  "continent" => "Antartica",
-  })
+destination14 = Destination.new({"continent" => "Antartica"})
 destination14.save()
 
-bucketlist1 = Bucketlist.new({
-  "destination_id" => destination8.id,
-  "date_added" => "2020-04-05"
-  })
+bucketlist1 = Bucketlist.new({"destination_id" => destination8.id, "date_added" => "2020-04-05"})
 bucketlist1.save()
+
+bucketlist2 = Bucketlist.new({"destination_id" => destination11.id, "date_added" => "2020-04-05"})
+bucketlist2.save()
+
+bucketlist3 = Bucketlist.new({"destination_id" => destination4.id, "date_added" => "2020-04-05"})
+bucketlist3.save()
+
+bucketlist4 = Bucketlist.new({"destination_id" => destination3.id, "date_added" => "2020-04-05"})
+bucketlist4.save()
+
+beenthere1 = Beenthere.new({"destination_id" => destination10.id, "date_completed" => "2014-12-20"})
+beenthere1.save()
+
+beenthere2 = Beenthere.new({"destination_id" => destination7.id, "date_completed" => "2017-07-01"})
+beenthere2.save()
+
+beenthere3 = Beenthere.new({"destination_id" => destination6.id, "date_completed" => "2017-06-15"})
+beenthere3. save()
 
 
 binding.pry
