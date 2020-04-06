@@ -45,10 +45,10 @@ class Destination
  #    return Destination.new(results.first)
  #  end
  #
- # def delete_all()
- #   sql = "DELETE FROM destinations"
- #   SqlRunner.run(sql)
- # end
+ def self.delete_all()
+   sql = "DELETE FROM destinations"
+   SqlRunner.run(sql)
+ end
 
 
 end

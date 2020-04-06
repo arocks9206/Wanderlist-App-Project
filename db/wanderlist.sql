@@ -14,7 +14,10 @@ CREATE TABLE users
 CREATE TABLE destinations
 (
   id SERIAL primary key,
-  city VARCHAR(255)
+  city VARCHAR(255),
+  bucketlist BOOLEAN,
+  visited BOOLEAN,
+  country_id
 );
 
 CREATE TABLE countries
