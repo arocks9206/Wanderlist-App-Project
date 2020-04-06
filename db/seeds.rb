@@ -5,13 +5,9 @@ require_relative('../models/country')
 
 require("pry-byebug")
 
-User.delete_all()
-Destination.delete_all()
-Country.delete_all()
-
-
 user = User.new({"full_name" => "Alex Rocks", "current_location" => "Glasgow"})
 user.save()
+
 
 destination1 = Destination.new({"city" => "Toronto"})
 destination1.save()
