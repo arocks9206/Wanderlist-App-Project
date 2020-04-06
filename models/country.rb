@@ -3,7 +3,8 @@ require_relative('../db/sql_runner')
 
 class Country
 
-  attr_accessor(:country, :id)
+  attr_accessor(:country)
+  attr_reader(:id)
 
 
   def initialize(options)
@@ -22,34 +23,34 @@ class Country
     @id = results.first()['id'].to_i
  end
 
- # def update()
- #   sql = "UPDATE countries SET
- #       country
- #     =
- #     $1
- #     WHERE id = $2"
- #     values = [@city, @id]
- #     SqlRunner.run(sql, values)
- # end
- #
- # def self.all()
- #  sql = "SELECT * FROM countries"
- #  results = SqlRunner.run(sql)
- #  return results.map { |country| Country.new(country) }
- # end
- #
- # def self.find( id )
- #    sql = "SELECT * FROM countries
- #    WHERE id = $1"
- #    values = [id]
- #    results = SqlRunner.run(sql, values)
- #    return Country.new(results.first)
- #  end
- #
- # def self.delete_all()
- #   sql = "DELETE FROM countries"
- #   SqlRunner.run(sql)
- # end
+ def update()
+   sql = "UPDATE countries SET
+       country
+     =
+     $1
+     WHERE id = $2"
+     values = [@city, @id]
+     SqlRunner.run(sql, values)
+ end
+
+ def self.all()
+  sql = "SELECT * FROM countries"
+  results = SqlRunner.run(sql)
+  return results.map { |country| Country.new(country) }
+ end
+
+ def self.find( id )
+    sql = "SELECT * FROM countries
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Country.new(results.first)
+  end
+
+ def self.delete_all()
+   sql = "DELETE FROM countries"
+   SqlRunner.run(sql)
+ end
 
 
 end

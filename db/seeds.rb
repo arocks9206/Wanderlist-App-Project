@@ -3,6 +3,9 @@ require_relative('../models/country')
 
 require("pry-byebug")
 
+Destination.delete_all()
+Country.delete_all()
+
 destination1 = Destination.new({
   "city" => "Toronto",
   "bucketlist" => false,
@@ -39,21 +42,24 @@ destination5 = Destination.new({
   "city" => "Rio de Janeiro",
   "bucketlist" => true,
   "visited" => false,
-  "country_id" => country5.id})
+  "country_id" => country5.id
+  })
 destination5.save()
 
 destination6 = Destination.new({
   "city" => "Barcelona",
   "bucketlist" => false,
   "visited" => true,
-  "country_id" => country6.id})
+  "country_id" => country6.id
+  })
 destination6.save()
 
 destination7 = Destination.new({
   "city" => "Berlin",
   "bucketlist" => false,
   "visited" => true,
-  "country_id" => country7.id})
+  "country_id" => country7.id
+  })
 destination7.save()
 
 destination8 = Destination.new({
@@ -76,7 +82,8 @@ destination10 = Destination.new({
   "city" => "Agra",
   "bucketlist" => false,
   "visited" => true,
-  "country_id" => country10.id})
+  "country_id" => country10.id
+  })
 destination10.save()
 
 destination11 = Destination.new({
@@ -86,12 +93,15 @@ destination11 = Destination.new({
   "country_id" => country11.id
   })
 destination11.save()
+destination11.city = "Tokyo"
+destination11.update()
 
 destination12 = Destination.new({
   "city" => "Melbourne",
   "bucketlist" => true,
   "visited" => false,
-  "country_id" => country12.id})
+  "country_id" => country12.id
+  })
 destination12.save()
 
 
