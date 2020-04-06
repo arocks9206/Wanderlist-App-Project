@@ -2,8 +2,7 @@ require_relative('../db/sql_runner')
 
 class Bucketlist
 
-attr_reader (:destination_id)
-attr_accessor (:date_added)
+attr_reader (:destination_id, :date_added, :id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

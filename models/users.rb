@@ -3,8 +3,8 @@ require_relative('../db/sql_runner')
 
 class User
 
-  attr_accessor(:full_name, :current_location)
-  attr_reader(:id)
+  attr_reader(:full_name, :current_location, :id)
+
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -28,34 +28,34 @@ class User
     @id = results.first()['id'].to_i
  end
 
- def update()
-   sql = "UPDATE destinations SET
-       city
-     =
-     $1
-     WHERE id = $2"
-     values = [@current_location, @id]
-     SqlRunner.run(sql, values)
- end
-
- def self.all()
-  sql = "SELECT * FROM users"
-  results = SqlRunner.run( sql )
-  return results.map { |user| User.new(user) }
- end
-
- def self.find(id)
-    sql = "SELECT * FROM users
-    WHERE id = $1"
-    values = [id]
-    results = SqlRunner.run(sql, values)
-    return User.new(results.first)
-  end
-
- def delete_all()
-   sql = "DELETE FROM users"
-   SqlRunner.run(sql)
- end
+ # def update()
+ #   sql = "UPDATE destinations SET
+ #       city
+ #     =
+ #     $1
+ #     WHERE id = $2"
+ #     values = [@current_location, @id]
+ #     SqlRunner.run(sql, values)
+ # end
+ #
+ # def self.all()
+ #  sql = "SELECT * FROM users"
+ #  results = SqlRunner.run( sql )
+ #  return results.map { |user| User.new(user) }
+ # end
+ #
+ # def self.find(id)
+ #    sql = "SELECT * FROM users
+ #    WHERE id = $1"
+ #    values = [id]
+ #    results = SqlRunner.run(sql, values)
+ #    return User.new(results.first)
+ #  end
+ #
+ # def delete_all()
+ #   sql = "DELETE FROM users"
+ #   SqlRunner.run(sql)
+ # end
 
 
 

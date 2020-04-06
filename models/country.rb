@@ -1,13 +1,13 @@
 require_relative('../db/sql_runner')
 
 
-class Destination
+class Country
 
-  attr_reader(:city, :id)
+  attr_reader(:country, :id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @city = options['city']
+    @country = options['country']
   end
 
   def save()
@@ -16,14 +16,14 @@ class Destination
     VALUES
     ($1)
     RETURNING id"
-    values = [@city]
+    values = [@country]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
  end
 
  # def update()
- #   sql = "UPDATE destinations SET
- #       city
+ #   sql = "UPDATE countries SET
+ #       country
  #     =
  #     $1
  #     WHERE id = $2"
@@ -32,21 +32,21 @@ class Destination
  # end
  #
  # def self.all()
- #  sql = "SELECT * FROM destinations"
+ #  sql = "SELECT * FROM countries"
  #  results = SqlRunner.run(sql)
- #  return results.map { |destination| Destination.new(destination) }
+ #  return results.map { |country| Country.new(country) }
  # end
  #
  # def self.find( id )
- #    sql = "SELECT * FROM destinations
+ #    sql = "SELECT * FROM countries
  #    WHERE id = $1"
  #    values = [id]
  #    results = SqlRunner.run(sql, values)
- #    return Destination.new(results.first)
+ #    return Country.new(results.first)
  #  end
  #
  # def delete_all()
- #   sql = "DELETE FROM destinations"
+ #   sql = "DELETE FROM countries"
  #   SqlRunner.run(sql)
  # end
 
