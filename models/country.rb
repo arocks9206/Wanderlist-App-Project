@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 
 class Country
 
-  attr_reader(:country, :id)
+  attr_accessor(:country, :id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -11,8 +11,8 @@ class Country
   end
 
   def save()
-    sql = "INSERT INTO destinations
-    (city)
+    sql = "INSERT INTO countries
+    (country)
     VALUES
     ($1)
     RETURNING id"

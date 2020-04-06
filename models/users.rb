@@ -52,10 +52,10 @@ class User
  #    return User.new(results.first)
  #  end
  #
- # def delete_all()
- #   sql = "DELETE FROM users"
- #   SqlRunner.run(sql)
- # end
+ def delete_all()
+   sql = "DELETE FROM users"
+   SqlRunner.run(sql)
+ end
 
 
 
