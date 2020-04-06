@@ -1,8 +1,6 @@
-DROP TABLE countries;
 DROP TABLE destinations;
+DROP TABLE countries;
 DROP TABLE users;
-
-
 
 CREATE TABLE users
 (
@@ -17,7 +15,7 @@ CREATE TABLE destinations
   city VARCHAR(255),
   bucketlist BOOLEAN,
   visited BOOLEAN,
-  country_id
+  country_id INT REFERENCES countries(id) ON DELETE CASCADE
 );
 
 CREATE TABLE countries
