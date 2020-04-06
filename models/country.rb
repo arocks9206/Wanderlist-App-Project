@@ -5,6 +5,7 @@ class Country
 
   attr_accessor(:country, :id)
 
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @country = options['country']

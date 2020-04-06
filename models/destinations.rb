@@ -3,20 +3,27 @@ require_relative('../db/sql_runner')
 
 class Destination
 
-  attr_accessor(:city, :id)
+  attr_accessor(:city, :bucketlist, :visited)
+  attr_reader(:id, :country_id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @city = options['city']
+    @bucketlist = options['bucketlist']
+    @visited = options['visited']
+    @country_id = options['country_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO destinations
-    (city)
+    (city,
+    bucketlist,
+    visited,
+    country_id)
     VALUES
-    ($1)
+    ($1, $2, $3, $4)
     RETURNING id"
-    values = [@city]
+    values = [@city, @bucketlist, @visited, @country_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
  end
