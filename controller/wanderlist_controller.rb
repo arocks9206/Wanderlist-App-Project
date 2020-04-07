@@ -34,8 +34,8 @@ end
 
 post '/destinations/:id/delete' do
   id = params['id'].to_i()
-  order = Destination.find(id)
-  order.delete()
+  city = Destination.find(id)
+  city.delete()
   redirect('/destinations')
 end
 
