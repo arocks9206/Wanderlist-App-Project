@@ -32,6 +32,13 @@ post "/destinations" do
   redirect('/destinations')
 end
 
+post '/destinations/:id/delete' do
+  id = params['id'].to_i()
+  order = Destination.find(id)
+  order.delete()
+  redirect('/destinations')
+end
+
 
 
 get "/countries" do

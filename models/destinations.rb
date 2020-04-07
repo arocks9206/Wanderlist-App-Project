@@ -84,5 +84,11 @@ class Destination
    results.map{|destination| Destination.new(destination)}
  end
 
+ def delete_city()
+   sql = "DELETE FROM destinations WHERE id = $1"
+   values = [@id]
+   SqlRunner.run(sql, values)
+ end
+
 
 end
