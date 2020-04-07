@@ -1,0 +1,22 @@
+<form action="/destinations" method="POST">
+<label for="country">Country:</label>
+<select id="country" name="country_id">
+  <% for country in @countries %>
+    <option value="<%= country.id %>">
+        <%=  country.country %>
+    </option>
+  <% end %>
+</select>
+
+  <label for="city">City:</label>
+    <input id="city" type="text" name="city"/>
+
+    <label for="visited">Visited</label>
+  <select id="visited" name="visited">
+    <option value="true">Yes, I've visited</option>
+    <option value="false">No, haven't visited yet</option>
+  </select>
+
+
+  <input type='submit' value="Create Destination"/>
+</form>

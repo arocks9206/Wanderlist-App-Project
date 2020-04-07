@@ -52,6 +52,14 @@ class Country
    SqlRunner.run(sql)
  end
 
+ def mark_as_visited()
+   sql = "UPDATE countries SET visited = true WHERE id = $1"
+   values = [@id]
+   SqlRunner.run(sql, values)
+ end
+
+  
+
 
 
 

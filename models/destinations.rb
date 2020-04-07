@@ -65,5 +65,18 @@ class Destination
    SqlRunner.run(sql, values)
  end
 
+ def find_country()
+   sql = "SELECT * FROM countries WHERE id = $1"
+   values = [@country_id]
+   result = SqlRunner.run(sql, values)
+   return Country.new(result.first)
+ end
+
+ def self.find_visited_destinations()
+   sql = "SELECT * FROM destinations WHERE visited = true"
+   results = SqlRunner.run(sql)
+   results.map {|destination| Destination.new(destination)}
+ end
+
 
 end
