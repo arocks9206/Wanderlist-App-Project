@@ -3,7 +3,7 @@
 <a href="destinations/new">Create Destinations</a>
 <a href="/destinations/:id/delete">Delete Destinations</a>
 <% @destinations.each do|destination|%>
-<p> city: <%= destination.city %> </p>
-<p> visited: <%= destination.visited %> </p>
-<p> country: <%= destination.find_country.country %> </p>
+<p> City: <%= destination.city %> </p>
+<p> Visited: <%= destination.visited %> </p>
+<p> Country: <%= destination.find_country.country %> </p>
 <% end %>
