@@ -1,0 +1,5 @@
+<% @destinations_bucketlist.each do|destination|%>
+<p> City: <%= destination.city %> </p>
+<p> Bucketlist: <%= destination.visited %> </p>
+<p> Country: <%= destination.find_country.country %> </p>
+<% end %>

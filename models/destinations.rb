@@ -78,5 +78,11 @@ class Destination
    results.map {|destination| Destination.new(destination)}
  end
 
+ def self.find_bucketlist_destinations()
+   sql = "SELECT * FROM destinations WHERE visited = false"
+   results = SqlRunner.run(sql)
+   results.map{|destination| Destination.new(destination)}
+ end
+
 
 end
