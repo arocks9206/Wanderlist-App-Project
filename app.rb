@@ -1,9 +1,9 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-# require_relative()
-# require_relative()
-# require_relative()
+require_relative('controllers/wanderlist_controller')
+
+
 
 get '/' do
-  erb( :index )
+  erb(:index)
 end

@@ -9,7 +9,6 @@ class Destination
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @city = options['city']
-    @bucketlist = options['bucketlist']
     @visited = options['visited']
     @country_id = options['country_id'].to_i
   end
@@ -17,27 +16,27 @@ class Destination
   def save()
     sql = "INSERT INTO destinations
     (city,
-    bucketlist,
     visited,
     country_id)
     VALUES
-    ($1, $2, $3, $4)
+    ($1, $2, $3)
     RETURNING *"
-    values = [@city, @bucketlist, @visited, @country_id]
+    values = [@city, @visited, @country_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
  end
 
  def update()
    sql = "UPDATE destinations SET
+      (
        city,
-       bucketlist,
        visited,
        country_id
+      )
      =
-     $1, $2, $3, $4
-     WHERE id = $5"
-     values = [@city, @bucketlist, @visited, @country_id, @id]
+     ( $1, $2, $3 )
+     WHERE id = $4"
+     values = [@city, @visited, @country_id, @id]
      SqlRunner.run(sql, values)
  end
 
@@ -58,6 +57,12 @@ class Destination
  def self.delete_all()
    sql = "DELETE FROM destinations"
    SqlRunner.run(sql)
+ end
+
+ def mark_as_visited()
+   sql = "UPDATE destinations SET visited = true WHERE id = $1"
+   values = [@id]
+   SqlRunner.run(sql, values)
  end
 
 

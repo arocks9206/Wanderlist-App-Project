@@ -25,11 +25,11 @@ class Country
 
  def update()
    sql = "UPDATE countries SET
-       country
+       (country)
      =
-     $1
+    ($1)
      WHERE id = $2"
-     values = [@city, @id]
+     values = [@country, @id]
      SqlRunner.run(sql, values)
  end
 
@@ -46,11 +46,14 @@ class Country
     results = SqlRunner.run(sql, values)
     return Country.new(results.first)
   end
-
+ #
  def self.delete_all()
    sql = "DELETE FROM countries"
    SqlRunner.run(sql)
  end
+
+
+
 
 
 end

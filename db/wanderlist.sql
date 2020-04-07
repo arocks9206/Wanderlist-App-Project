@@ -12,7 +12,6 @@ CREATE TABLE destinations
 (
   id SERIAL primary key,
   city VARCHAR(255),
-  bucketlist BOOLEAN,
   visited BOOLEAN,
-  country_id INT REFERENCES countries(id) 
+  country_id INT REFERENCES countries(id)
 );
