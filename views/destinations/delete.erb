@@ -1,5 +1,14 @@
-<form action="/destinations/<%= @destinations.id %>/delete" method="post">
+  <form action="/destinations/<%= destination.id %>/delete" method="post">
   <label for="city">City:</label>
-    <input id="city" type="text" name="city"/>
-  <button type="submit">Delete Entry</button>
+  <select id="destination" name="destination">
+    <% for destination in @destinations %>
+      <option value="<%= destination.id %>">
+          <%=   %>
+      </option>
+    <% end %>
+  </select>
+
+  <td><form action="/destinations/<%= destination.id %>/delete" method = "post">
+    <button type="submit">Delete</button>
+  </form></td>
 </form>
