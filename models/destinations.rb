@@ -46,7 +46,7 @@ class Destination
   return results.map { |destination| Destination.new(destination) }
  end
 
- def self.find( id )
+ def self.find(id)
     sql = "SELECT * FROM destinations
     WHERE id = $1"
     values = [id]

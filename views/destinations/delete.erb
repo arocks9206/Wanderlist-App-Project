@@ -1,14 +1,9 @@
-  <form action="/destinations/<%= destination.id %>/delete" method="post">
-  <label for="city">City:</label>
-  <select id="destination" name="destination">
-    <% for destination in @destinations %>
-      <option value="<%= destination.id %>">
-          <%=   %>
-      </option>
-    <% end %>
-  </select>
+<p>City: <%= @destination.city %></p>
+<p>Country: <%= @destination.country_id %></p>
 
-  <td><form action="/destinations/<%= destination.id %>/delete" method = "post">
-    <button type="submit">Delete</button>
-  </form></td>
+
+<form action="/destinations/<%= @destination.id %>/delete" method="post">
+  <button type="submit">Delete</button>
 </form>
+
+<a href="/destinations/<%= @destination.id %>/delete">Delete Entry</a>
