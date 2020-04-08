@@ -1,0 +1,68 @@
+body {
+  background: #FFFAF0 url('/images/background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: #4682B4;
+  font-family: 'Cooper Black', serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  opacity: 0.5;
+}
+
+h1, h2 {
+  font-family: 'Cooper Black', serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #4682B4;
+  margin-bottom: 20px;
+}
+
+a, a:link, a:visited {
+  color: #6495ED;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #4682B4;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+main {
+  padding: 25px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  border-left: 1px solid #4682B4;
+  padding-left: 25px;
+}
