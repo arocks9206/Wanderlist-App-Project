@@ -7,95 +7,6 @@ require_relative('../models/search')
 
 require("pry-byebug")
 
-Destination.delete_all()
-Country.delete_all()
-
-destination1 = Destination.new({
-  "city" => "Toronto",
-  "visited" => true,
-  "country_id" => country1.id
-  })
-destination1.save()
-
-destination2 = Destination.new({
-  "city" => "New York",
-  "visited" => true,
-  "country_id" => country2.id
-  })
-destination2.save()
-
-destination3 = Destination.new({
-  "city" => "Mexico City",
-  "visited" => false,
-  "country_id" => country3.id
-  })
-destination3.save()
-
-destination4 = Destination.new({
-  "city" => "Santiago",
-  "visited" => false,
-  "country_id" => country4.id
-  })
-destination4.save()
-
-destination5 = Destination.new({
-  "city" => "Rio de Janeiro",
-  "visited" => false,
-  "country_id" => country5.id
-  })
-destination5.save()
-
-destination6 = Destination.new({
-  "city" => "Barcelona",
-  "visited" => true,
-  "country_id" => country6.id
-  })
-destination6.save()
-
-destination7 = Destination.new({
-  "city" => "Berlin",
-  "visited" => true,
-  "country_id" => country7.id
-  })
-destination7.save()
-
-destination8 = Destination.new({
-  "city" => "Marrakesh",
-  "visited" => false,
-  "country_id" => country8.id
-  })
-destination8.save()
-
-destination9 = Destination.new({
-  "city" => "Cape Town",
-  "visited" => false,
-  "country_id" => country9.id
-  })
-destination9.save()
-
-destination10 = Destination.new({
-  "city" => "Agra",
-  "visited" => true,
-  "country_id" => country10.id
-  })
-destination10.save()
-
-destination11 = Destination.new({
-  "city" => "Kyoto",
-  "visited" => false,
-  "country_id" => country11.id
-  })
-destination11.save()
-destination11.city = "Tokyo"
-destination11.update()
-
-destination12 = Destination.new({
-  "city" => "Melbourne",
-  "visited" => false,
-  "country_id" => country12.id
-  })
-destination12.save()
-
 Continent.delete_all()
 
 # Continents
@@ -208,73 +119,87 @@ country12.save()
 
 city1 = City.new({
   'name' => 'Berlin',
-  'country_id' => country1.id,
+  'country_id' => country7.id,
   'visit' => false
   })
   city1.save()
 
 city2 = City.new({
-  'name' => 'Paris',
-  'country_id' => country7.id,
+  'name' => 'Toronto',
+  'country_id' => country1.id,
   'visit' => true
   })
   city2.save()
 
 city3 = City.new({
   'name' => 'Tokyo',
-  'country_id' => country5.id,
+  'country_id' => country11.id,
   'visit' => true
   })
   city3.save()
 
 city4 = City.new({
-  'name' => 'Rio',
-  'country_id' => country6.id,
+  'name' => 'Rio de Janeiro',
+  'country_id' => country5.id,
   'visit' => false
   })
   city4.save()
 
 city5 = City.new({
   'name' => 'Sydney',
-  'country_id' => country4.id,
+  'country_id' => country12.id,
   'visit' => true
   })
   city5.save()
 
 city6 = City.new({
   'name' => 'New York',
-  'country_id' => country2.id,
+  'country_id' => country1.id,
   'visit' => false
   })
   city6.save()
 
 city7 = City.new({
-  'name' => 'Nice',
-  'country_id' => country7.id,
+  'name' => 'Mexico City',
+  'country_id' => country3.id,
   'visit' => false
   })
   city7.save()
 
 city8 = City.new({
-  'name' => 'Frankfurt',
-  'country_id' => country1.id,
+  'name' => 'Santiago',
+  'country_id' => country4.id,
   'visit' => false
   })
   city8.save()
 
 city9 = City.new({
-  'name' => 'Perth',
-  'country_id' => country4.id,
+  'name' => 'Barcelona',
+  'country_id' => country6.id,
   'visit' => true
   })
   city9.save()
 
 city10 = City.new({
   'name' => 'Johannesburg',
-  'country_id' => country3.id,
+  'country_id' => country9.id,
   'visit' => true
   })
   city10.save()
+
+  city11 = City.new({
+    'name' => "Marrakesh",
+    'country_id' => country8.id,
+    'visit' => true
+    })
+    city11.save()
+
+  city12 = City.new({
+    'name' => "Agra",
+    'country_id' => country10.id,
+    'visit' => true
+    })
+    city12.save()
 
   #  Atrractions
 attraction1 = Attraction.new({
@@ -284,45 +209,45 @@ attraction1 = Attraction.new({
   attraction1.save()
 
 attraction2 = Attraction.new({
-  'name' => "Statue of Liberty",
+  'name' => "Empire State Building",
   'city_id' => city6.id
   })
   attraction2.save()
 
 attraction3 = Attraction.new({
-  'name' => "Eiffel Tower",
-  'city_id' => city2.id
+  'name' => "Taj Mahal",
+  'city_id' => city12.id
   })
   attraction3.save()
 
 attraction4 = Attraction.new({
-  'name' => "Empire State Building",
-  'city_id' => city6.id
+  'name' => "Sagrada Familia",
+  'city_id' => city9.id
   })
   attraction4.save()
 
 attraction5 = Attraction.new({
-  'name' => "Times Square",
-  'city_id' => city6.id
+  'name' => "CN Tower",
+  'city_id' => city2.id
   })
   attraction5.save()
 
 attraction6 = Attraction.new({
-  'name' => "sydney opera house",
+  'name' => "Sydney Opera House",
   'city_id' => city5.id
   })
   attraction6.save()
 
 
 attraction7 = Attraction.new({
-  'name' => "Check Point Charlie",
+  'name' => "Berlin Wall",
   'city_id' => city1.id
   })
   attraction7.save()
 
 attraction8 = Attraction.new({
-  'name' => "Louvre",
-  'city_id' => city2.id
+  'name' => "Harajuku District",
+  'city_id' => city3.id
   })
   attraction8.save()
 
