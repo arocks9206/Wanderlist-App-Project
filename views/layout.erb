@@ -4,29 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Wanderlist</title>
-
-  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
-  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
-  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
-
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  <title class="padding-left">Bucket List</title>
 </head>
 <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="/countries">Countries</a>
-        </li>
-
-        <li>
-          <a href="/destinations">Destinations</a>
-        </li>
-
-
+  <h1 class="main-header">Your Bucket List</h1>
+  <form class="padding-left search-container" action="/search" method="post">
+  <input class="search" type="text" name="search">
+  <input class="button search " type="submit" value="search">
+  </form>
+  <nav>
+    <ul class="nav-bar">
+      <li><a href="/">Home</a></li>
+      <li><a href="/continents">Continents</a></li>
+      <li><a href="/countries">Countries</a></li>
+      <li><a href="/cities">Cities</a></li>
+      <li><a href="/cities/visited">Visited</a></li>
+      <li><a href="/cities/to-visit">To Do</a></li>
+      <li><a href="/attractions">Attractions</a></li>
     </ul>
-    </nav>
 
-<%=yield%>
+  </nav>
 
+  <%= yield %>
 </body>
 </html>
