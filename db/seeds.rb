@@ -1,4 +1,3 @@
-require_relative('../models/destinations')
 require_relative('../models/country')
 require_relative('../models/continent')
 require_relative('../models/country')
@@ -10,43 +9,6 @@ require("pry-byebug")
 
 Destination.delete_all()
 Country.delete_all()
-
-country1 = Country.new({"country" => "Canada"})
-country1.save()
-
-country2 = Country.new({"country" => "United States"})
-country2.save()
-
-country3 = Country.new({"country" => "Mexico"})
-country3.save()
-
-country4 = Country.new({"country" => "Chile"})
-country4.save()
-
-country5 = Country.new({"country" => "Brazil"})
-country5.save()
-
-country6 = Country.new({"country" => "Spain"})
-country6.save()
-
-country7 = Country.new({"country" => "Germany"})
-country7.save()
-
-country8 = Country.new({"country" => "Morroco"})
-country8.save()
-
-country9 = Country.new({"country" => "South Africa"})
-country9.save()
-
-country10 = Country.new({"country" => "India"})
-country10.save()
-
-country11 = Country.new({"country" => "Japan"})
-country11.save()
-
-country12 = Country.new({"country" => "Australia"})
-country12.save()
-
 
 destination1 = Destination.new({
   "city" => "Toronto",
@@ -182,47 +144,65 @@ continent7.save()
 
 # Countries
 
-country1 = Country.new({
-  'name' => "Germany",
-  'continent_id' => continent1.id
-  })
+country1 = Country.new({"country" => "Canada",
+                       'continent_id' => continent4.id
+                       })
 country1.save()
 
-country2 = Country.new({
-  'name' => "USA",
-  'continent_id' => continent4.id
-  })
-  country2.save()
+country2 = Country.new({"country" => "United States",
+                        'continent_id' => continent4.id
+                        })
+country2.save()
 
-country3 = Country.new({
-  'name' => "South Africa",
-  'continent_id' => continent2.id
-  })
-  country3.save()
+country3 = Country.new({"country" => "Mexico",
+                        'continent_id' => continent4.id
+                        })
+country3.save()
 
-country4 = Country.new({
-  'name' => "Australia",
-  'continent_id' => continent6.id
-  })
-  country4.save()
+country4 = Country.new({"country" => "Chile",
+                        'continent_id' => continent5.id
+                        })
+country4.save()
 
-country5 = Country.new({
-  'name' => "Japan",
-  'continent_id' => continent3.id
-  })
-  country5.save()
+country5 = Country.new({"country" => "Brazil",
+                        'continent_id' => continent5.id
+                        })
+country5.save()
 
-country6 = Country.new({
-  'name' => "Brazil",
-  'continent_id' => continent5.id
-  })
-  country6.save()
+country6 = Country.new({"country" => "Spain",
+                        'continent_id' => continent1.id
+                        })
+country6.save()
 
-country7 = Country.new({
-  'name' => "France",
-  'continent_id' => continent1.id
-  })
-  country7.save()
+country7 = Country.new({"country" => "Germany",
+                        'continent_id' => continent1.id
+                        })
+country7.save()
+
+country8 = Country.new({"country" => "Morroco",
+                        'continent_id' => continent2.id
+                        })
+country8.save()
+
+country9 = Country.new({"country" => "South Africa",
+                        'continent_id' => continent2.id
+                        })
+country9.save()
+
+country10 = Country.new({"country" => "India",
+                        'continent_id' => continent3.id
+                        })
+country10.save()
+
+country11 = Country.new({"country" => "Japan",
+                        'continent_id' => continent2.id
+                        })
+country11.save()
+
+country12 = Country.new({"country" => "Australia",
+                        'continent_id' => continent6.id
+                        })
+country12.save()
 
 # Cities
 

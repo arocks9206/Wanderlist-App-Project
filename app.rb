@@ -10,7 +10,6 @@ require_relative('controllers/review_controller')
 require_relative('models/search.rb')
 
 
-
 get '/' do
   erb(:index)
 end
